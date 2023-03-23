@@ -1,0 +1,119 @@
+<h1 class="text-center" style="color: aliceblue">Registro de usuario</h1>
+<div class="container">
+  <form [formGroup]="MyNewForm" >
+    <div class="container col-lg-8 col-md-8 col-sm-8 col-8">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Nombre*</span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          name="nombre"
+          placeholder="Example"
+          formControlName="nombre"
+        />
+      </div>
+      <div
+        *ngIf="nombre.touched && nombre.errors?.['required']"
+        class="alert alert-danger"
+      >
+        El campo nombre es obligatorio
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Primer apellido*</span>
+        </div>
+
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Example"
+          name="apellido1"
+          formControlName="apellido1"
+        />
+      </div>
+      <div
+        *ngIf="apellido1.touched && apellido1.errors?.['required']"
+        class="alert alert-danger"
+      >
+        El campo Primer apellido es obligatorio
+      </div>
+      <div
+        *ngIf="( apellido1.errors?.['minlength'] || apellido1.errors?.['maxlength'])"
+        class="alert alert-danger"
+      >
+        El campo apellido no cumple los requisitos
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Segundo apellido</span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Example"
+          name="apellido2"
+          formControlName="apellido2"
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Email*</span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Example@gmail.com"
+          name="email"
+          formControlName="email"
+        />
+      </div>
+      <div
+        *ngIf=" (email.touched && email.errors?.['required'])"
+        class="alert alert-danger"
+      >
+        El campo email es obligatorio
+      </div>
+      <div *ngIf="( email.errors?.['email'])" class="alert alert-danger">
+        El campo email no cumple los requisitos
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">password</span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="contr..."
+          name="password"
+          formControlName="password"
+        />
+      </div>
+      <div
+        *ngIf=" (password.touched && password.errors?.['required']) "
+        class="alert alert-danger"
+      >
+        El campo password debe tener 9 caracteres
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Repetir password</span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="contr..."
+          name="Rpassword"
+          formControlName="Rpassword"
+        />
+      </div>
+      <div
+        *ngIf=" (rPassword.touched && rPassword.errors?.['required']) "
+        class="alert alert-danger"
+      >
+        El campo password debe tener 9 caracteres
+      </div>
