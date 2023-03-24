@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer/footer.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SignupComponent } from './user/signup/signup.component';
 import { LoginComponent } from './user/login/login.component';
+import { FilmsComponent } from './list/films/films.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LoginComponent } from './user/login/login.component';
     FooterComponent,
     SignupComponent,
     LoginComponent,
+    FilmsComponent,
    
   ],
   imports: [
